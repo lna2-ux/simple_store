@@ -7,9 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-Product.destroy_all
-
- require "csv"
+require "csv"
 
 Product.destroy_all
 Category.destroy_all
@@ -23,12 +21,14 @@ products.each do |row|
   category = Category.find_or_create_by(name: category_name)
 
   category.products.create!(
-    title: row["title"],
+    title: row["name"],                    # Your CSV header is "name", not "title"
     description: row["description"],
     price: row["price"],
-    stock_quantity: row["stock_quantity"]
+    stock_quantity: row["stock quantity"]  # Matches the CSV header "stock quantity"
   )
 end
 
-puts "Seeded #{Category.count} categories and #{Product.count} products from CSV."
+
+
+ 
 
