@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "products/index"
+    get "/products", to: "products#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -13,8 +14,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 end
-Rails.application.routes.draw do
-  get "/products", to: "products#index"
-  # You can also set root "products#index" if desired
-endgit add .
+ 
 
