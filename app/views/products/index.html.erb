@@ -1,10 +1,11 @@
  <h1>Products Catalog</h1>
-
-<ul>
+ <ul>
   <% @products.each do |product| %>
     <li>
-      <strong><%= product.title %></strong> - $<%= product.price %> (Stock: <%= product.stock_quantity %>)
+      <%= link_to product.title, product_path(product) %> 
+      (<span><%= product.category.name %></span>) - $<%= product.price %>
     </li>
   <% end %>
 </ul>
+ 
  
